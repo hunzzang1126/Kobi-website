@@ -8,6 +8,7 @@ import {
   useCallback,
   type ReactNode,
 } from "react";
+import { translations } from "@/content/translations";
 
 export type Locale = "en" | "ko";
 
@@ -33,23 +34,11 @@ function setCookie(name: string, value: string) {
   document.cookie = `${name}=${value};path=/;max-age=${COOKIE_MAX_AGE};SameSite=Lax`;
 }
 
-// Lazy-load translations to avoid circular imports
-let translationsModule: Record<string, Record<string, string>> | null = null;
-
-async function loadTranslations() {
-  if (!translationsModule) {
-    const mod = await import("@/content/translations");
-    translationsModule = mod.translations;
-  }
-  return translationsModule;
-}
-
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("en");
   const [hasChosen, setHasChosen] = useState(true); // assume chosen until checked
-  const [translations, setTranslations] = useState<Record<string, Record<string, string>> | null>(null);
 
-  // Load translations and check cookie on mount
+  // Check cookie on mount
   useEffect(() => {
     const saved = getCookie(COOKIE_NAME) as Locale | null;
     if (saved === "en" || saved === "ko") {
@@ -58,25 +47,21 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     } else {
       setHasChosen(false);
     }
-
-    loadTranslations().then(setTranslations);
   }, []);
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
     setCookie(COOKIE_NAME, newLocale);
     setHasChosen(true);
-    // Update html lang attribute
     document.documentElement.lang = newLocale;
   }, []);
 
   const t = useCallback(
     (key: string): string => {
-      if (!translations) return key;
       const localeStrings = translations[locale];
       return localeStrings?.[key] ?? key;
     },
-    [locale, translations]
+    [locale]
   );
 
   return (
