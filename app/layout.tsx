@@ -91,6 +91,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
+        {/* Force scroll to top BEFORE React hydration — prevents browser scroll restoration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if(history.scrollRestoration){history.scrollRestoration="manual"}window.scrollTo(0,0)`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
