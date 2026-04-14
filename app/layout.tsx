@@ -48,38 +48,26 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  name: "KOBI Toronto",
+  name: "KOBI",
   description:
-    "Premium Korean BBQ restaurant in Toronto featuring USDA Prime cuts, house-made banchan, and charcoal-fired grilling.",
+    "Premium Korean BBQ restaurant in Thornhill featuring USDA Prime cuts, house-made banchan, and charcoal-fired grilling.",
   servesCuisine: "Korean BBQ",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Queen Street West",
-    addressLocality: "Toronto",
+    streetAddress: "100 Steeles Ave W",
+    addressLocality: "Thornhill",
     addressRegion: "ON",
-    postalCode: "M5H 2M9",
+    postalCode: "L4J 2L1",
     addressCountry: "CA",
   },
-  telephone: "+1-416-555-0142",
+  telephone: "+1-289-597-1548",
   priceRange: "$$$",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday"],
-      opens: "17:00",
-      closes: "22:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Thursday", "Friday", "Saturday"],
-      opens: "17:00",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "11:30",
       closes: "23:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Sunday",
-      opens: "17:00",
-      closes: "21:00",
     },
   ],
 };

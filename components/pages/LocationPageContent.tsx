@@ -70,14 +70,14 @@ export default function LocationPageContent() {
         </div>
       </section>
 
-      {/* Map placeholder */}
+      {/* Map embed */}
       <section className={styles.mapSection}>
         <div className={styles.mapPlaceholder}>
           <iframe
-            src={`https://www.google.com/maps/embed/v1/place?key=&q=${encodeURIComponent(RESTAURANT.address + ", " + RESTAURANT.city)}`}
+            src="https://www.google.com/maps?q=100+Steeles+Ave+W,+Thornhill,+ON+L4J+2L1&output=embed"
             width="100%"
             height="100%"
-            style={{ border: 0 }}
+            style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2)" }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -93,8 +93,8 @@ export default function LocationPageContent() {
           <span className={`${styles.label} reveal`}>{t("locationPage.directions.label")}</span>
           <h2 className={`${styles.heading} reveal`}>{t("locationPage.directions.heading")}</h2>
           <div className={`${styles.directionsList} stagger-children`}>
-            <p className={`${styles.body} reveal`}>🚇 {t("locationPage.directions.subway")}</p>
-            <p className={`${styles.body} reveal`}>🚋 {t("locationPage.directions.streetcar")}</p>
+            <p className={`${styles.body} reveal`}>🚗 {t("locationPage.directions.driving")}</p>
+            <p className={`${styles.body} reveal`}>🚌 {t("locationPage.directions.transit")}</p>
             <p className={`${styles.body} reveal`}>🅿️ {t("locationPage.directions.parking")}</p>
           </div>
         </div>

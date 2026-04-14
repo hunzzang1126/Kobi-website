@@ -61,18 +61,16 @@ export default function LocationSection() {
 
         <div className={`${styles.mapColumn} fade-up`}>
           <div className={styles.mapPlaceholder}>
-            <div className={styles.mapGrid} aria-hidden="true">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={`h-${i}`} className={styles.mapLineH} style={{ top: `${(i + 1) * 11}%` }} />
-              ))}
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={`v-${i}`} className={styles.mapLineV} style={{ left: `${(i + 1) * 11}%` }} />
-              ))}
-            </div>
-            <div className={styles.mapPin} aria-hidden="true">
-              <div className={styles.mapPinDot} />
-              <div className={styles.mapPinRing} />
-            </div>
+            <iframe
+              src="https://www.google.com/maps?q=100+Steeles+Ave+W,+Thornhill,+ON+L4J+2L1&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) brightness(0.8) contrast(1.2)" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="KOBI Location"
+            />
             <a
               href={LINKS.googleMaps}
               target="_blank"

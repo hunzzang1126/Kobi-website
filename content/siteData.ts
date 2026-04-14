@@ -25,20 +25,18 @@ export interface NavItem {
 export const RESTAURANT = {
   name: "KOBI",
   tagline: "Fire. Smoke. Soul.",
-  subtitle: "TORONTO",
+  subtitle: "THORNHILL",
   description:
     "Premium Korean BBQ crafted over open flame. USDA Prime and above, house-made banchan, and an experience built around charcoal and craft.",
-  address: "123 Queen Street West",
-  city: "Toronto, ON M5H 2M9",
-  phone: "+1 (416) 555-0142",
-  phoneRaw: "tel:+14165550142",
-  email: "hello@kobitornto.com",
+  address: "100 Steeles Ave W",
+  city: "Thornhill, ON L4J 2L1",
+  phone: "(289) 597-1548",
+  phoneRaw: "tel:+12895971548",
+  email: "hello@kobitoronto.com",
   hours: [
-    { days: "Monday — Wednesday", time: "5 PM — 10 PM" },
-    { days: "Thursday — Saturday", time: "5 PM — 11 PM" },
-    { days: "Sunday", time: "5 PM — 9 PM" },
+    { days: "Tuesday — Monday", time: "11:30 AM — 11 PM" },
   ],
-  mapUrl: "https://maps.google.com/?q=123+Queen+Street+West+Toronto",
+  mapUrl: "https://maps.google.com/?q=100+Steeles+Ave+W+Thornhill+ON",
   established: "2024",
 } as const;
 
@@ -46,7 +44,7 @@ export const RESTAURANT = {
 export const LINKS = {
   reservation: "#reserve",
   instagram: "https://instagram.com/kobitornto",
-  googleMaps: "https://maps.google.com/?q=123+Queen+Street+West+Toronto",
+  googleMaps: "https://maps.google.com/?q=100+Steeles+Ave+W+Thornhill+ON+L4J+2L1",
 } as const;
 
 // —— Navigation ——
