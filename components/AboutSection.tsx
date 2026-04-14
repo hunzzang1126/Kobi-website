@@ -1,53 +1,48 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./about-section.module.css";
 import SectionWrapper from "./ui/SectionWrapper";
 import InkDivider from "./InkDivider";
 import ParallaxKorean from "./ParallaxKorean";
-import { ABOUT } from "@/content/siteData";
+import { useLanguage } from "@/context/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function AboutSection() {
   const sectionRef = useScrollReveal({ threshold: 0.1 });
+  const { t } = useLanguage();
 
   return (
     <SectionWrapper id="about" className={styles.section}>
-      {/* Parallax background hangul */}
       <ParallaxKorean characters={["불", "炭"]} speed={0.12} />
 
       <div className={styles.about} ref={sectionRef}>
-        {/* Left side — dramatic image */}
         <div className={`${styles.imageColumn} reveal-left`}>
           <div className={styles.imageWrapper}>
             <div className={styles.imagePlaceholder} aria-label="Atmospheric interior photo">
               <div className={styles.imageGradient} />
             </div>
-            {/* Decorative frame — Korean-inspired */}
             <div className={styles.frameCornerTR} aria-hidden="true" />
             <div className={styles.frameCornerBL} aria-hidden="true" />
           </div>
-          {/* Vertical Korean text */}
           <div className={styles.verticalKorean} aria-hidden="true">
-            정성을 담다
+            {t("about.verticalKorean")}
           </div>
         </div>
 
-        {/* Right side — text content */}
         <div className={`${styles.textColumn} stagger-children`}>
-          {/* Ink brush divider */}
           <InkDivider width={160} />
+          <span className={`${styles.label} reveal`}>{t("about.label")}</span>
+          <h2 className={`${styles.heading} reveal`}>{t("about.heading")}</h2>
+          <p className={`${styles.paragraph} reveal`}>{t("about.p1")}</p>
+          <p className={`${styles.paragraph} reveal`}>{t("about.p2")}</p>
+          <p className={`${styles.paragraph} reveal`}>{t("about.p3")}</p>
 
-          <span className={`${styles.label} reveal`}>Our Philosophy</span>
-          <h2 className={`${styles.heading} reveal`}>{ABOUT.heading}</h2>
+          <Link href="/about" className={`${styles.viewMore} reveal`}>
+            {t("about.viewMore")} →
+          </Link>
 
-          {ABOUT.paragraphs.map((text, i) => (
-            <p key={i} className={`${styles.paragraph} reveal`}>
-              {text}
-            </p>
-          ))}
-
-          {/* Signature mark */}
           <div className={`${styles.signature} reveal`}>
             <Image
               src="/images/kobi-logo.png"

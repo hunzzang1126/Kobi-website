@@ -7,10 +7,12 @@ import ReservationSection from "@/components/ReservationSection";
 import LocationSection from "@/components/LocationSection";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
+import LanguageSplash from "@/components/LanguageSplash";
 
 export default function Home() {
   return (
     <>
+      <LanguageSplash />
       <Navigation />
       <ScrollProgress />
       <main>

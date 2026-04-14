@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./hero-section.module.css";
 import Button from "./ui/Button";
-import { RESTAURANT, LINKS } from "@/content/siteData";
+import { LINKS } from "@/content/siteData";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function HeroSection() {
   const [curtainOpen, setCurtainOpen] = useState(false);
   const [contentVisible, setContentVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const curtainTimer = setTimeout(() => setCurtainOpen(true), 400);
@@ -46,10 +48,10 @@ export default function HeroSection() {
 
       {/* Vertical Korean text — decorative */}
       <div className={`${styles.verticalTextLeft} ${contentVisible ? styles.showVertical : ""}`} aria-hidden="true">
-        숯불 위의 예술
+        {t("hero.verticalLeft")}
       </div>
       <div className={`${styles.verticalTextRight} ${contentVisible ? styles.showVertical : ""}`} aria-hidden="true">
-        불꽃과 정성
+        {t("hero.verticalRight")}
       </div>
 
       {/* Content */}
@@ -81,9 +83,9 @@ export default function HeroSection() {
           <span className={styles.dividerLine} />
         </div>
 
-        <p className={styles.tagline}>{RESTAURANT.tagline}</p>
+        <p className={styles.tagline}>{t("hero.tagline")}</p>
 
-        <p className={styles.subtitle}>Premium Korean BBQ · Toronto</p>
+        <p className={styles.subtitle}>{t("hero.subtitle")}</p>
 
         <div className={styles.cta}>
           <Button
@@ -93,14 +95,14 @@ export default function HeroSection() {
             id="hero-reserve-btn"
             ariaLabel="Reserve a table at KOBI"
           >
-            Reserve a Table
+            {t("hero.reserveBtn")}
           </Button>
         </div>
       </div>
 
       {/* Scroll indicator */}
       <div className={`${styles.scrollIndicator} ${contentVisible ? styles.showScroll : ""}`} aria-hidden="true">
-        <span className={styles.scrollText}>Scroll</span>
+        <span className={styles.scrollText}>{t("hero.scroll")}</span>
         <div className={styles.scrollLine}>
           <div className={styles.scrollDot} />
         </div>

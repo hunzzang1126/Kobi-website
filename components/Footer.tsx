@@ -1,15 +1,18 @@
+"use client";
+
 import styles from "./footer.module.css";
 import { RESTAURANT, LINKS } from "@/content/siteData";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className={styles.footer} role="contentinfo">
       <div className={styles.container}>
-        {/* Divider */}
         <div className={styles.divider} aria-hidden="true" />
 
         <div className={styles.content}>
-          {/* Links */}
           <div className={styles.links}>
             <a
               href={LINKS.instagram}
@@ -18,7 +21,7 @@ export default function Footer() {
               className={styles.link}
               aria-label="KOBI on Instagram"
             >
-              Instagram
+              {t("footer.instagram")}
             </a>
             <a href={RESTAURANT.phoneRaw} className={styles.link}>
               {RESTAURANT.phone}
@@ -28,14 +31,12 @@ export default function Footer() {
             </a>
           </div>
 
-          {/* Personality line */}
           <p className={styles.tagline}>
-            Charcoal & craft since {RESTAURANT.established}.
+            {t("footer.tagline")}
           </p>
 
-          {/* Copyright */}
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} Kobi Toronto. All rights reserved.
+            © {new Date().getFullYear()} Kobi Toronto. {t("footer.rights")}
           </p>
         </div>
       </div>

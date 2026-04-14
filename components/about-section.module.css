@@ -134,6 +134,20 @@
   line-height: 1.9;
 }
 
+.viewMore {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  transition: color var(--duration-fast) var(--ease-out);
+  margin-top: var(--space-8);
+}
+
+.viewMore:hover {
+  color: var(--color-gold-light);
+}
+
 .signature {
   margin-top: var(--space-16);
 }

@@ -4,36 +4,26 @@ import styles from "./reservation-section.module.css";
 import InkDivider from "./InkDivider";
 import ParallaxKorean from "./ParallaxKorean";
 import { LINKS } from "@/content/siteData";
+import { useLanguage } from "@/context/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function ReservationSection() {
   const sectionRef = useScrollReveal({ threshold: 0.15 });
+  const { t } = useLanguage();
 
   return (
     <section id="reserve" className={styles.reservation} ref={sectionRef}>
-      {/* Parallax background */}
       <ParallaxKorean characters={["席", "宴"]} speed={0.08} />
-
       <div className={styles.backgroundGlow} aria-hidden="true" />
 
       <div className={styles.content}>
         <InkDivider width={180} />
-
-        <span className={`${styles.label} reveal`}>Reservations</span>
-
-        <h2 className={`${styles.heading} reveal`}>
-          Your Table Awaits
-        </h2>
-
+        <span className={`${styles.label} reveal`}>{t("reserve.label")}</span>
+        <h2 className={`${styles.heading} reveal`}>{t("reserve.heading")}</h2>
         <span className={`${styles.koreanText} reveal`} aria-hidden="true">
-          자리를 예약하세요
+          {t("reserve.korean")}
         </span>
-
-        <p className={`${styles.subtext} reveal`}>
-          Join us for an evening of fire, flavor, and craft.
-        </p>
-
-        {/* Breathing glow CTA */}
+        <p className={`${styles.subtext} reveal`}>{t("reserve.subtext")}</p>
         <div className={`${styles.cta} reveal`}>
           <a
             href={LINKS.reservation}
@@ -41,7 +31,7 @@ export default function ReservationSection() {
             id="reserve-main-btn"
             aria-label="Reserve a table at KOBI"
           >
-            Reserve a Table
+            {t("reserve.button")}
           </a>
         </div>
       </div>

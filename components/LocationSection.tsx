@@ -1,24 +1,25 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./location-section.module.css";
 import SectionWrapper from "./ui/SectionWrapper";
 import { RESTAURANT, LINKS } from "@/content/siteData";
+import { useLanguage } from "@/context/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function LocationSection() {
   const sectionRef = useScrollReveal();
+  const { t } = useLanguage();
 
   return (
     <SectionWrapper id="location">
       <div className={styles.location} ref={sectionRef}>
-        {/* Info Column */}
         <div className={`${styles.infoColumn} stagger-children`}>
-          <span className={`${styles.label} fade-up`}>Find Us</span>
-          <h2 className={`${styles.heading} fade-up`}>Visit Kobi</h2>
+          <span className={`${styles.label} fade-up`}>{t("location.label")}</span>
+          <h2 className={`${styles.heading} fade-up`}>{t("location.heading")}</h2>
 
-          {/* Address */}
           <div className={`${styles.infoBlock} fade-up`}>
-            <h3 className={styles.infoTitle}>Address</h3>
+            <h3 className={styles.infoTitle}>{t("location.address")}</h3>
             <a
               href={LINKS.googleMaps}
               target="_blank"
@@ -31,9 +32,8 @@ export default function LocationSection() {
             </a>
           </div>
 
-          {/* Hours */}
           <div className={`${styles.infoBlock} fade-up`}>
-            <h3 className={styles.infoTitle}>Hours</h3>
+            <h3 className={styles.infoTitle}>{t("location.hours")}</h3>
             <ul className={styles.hoursList}>
               {RESTAURANT.hours.map((h, i) => (
                 <li key={i} className={styles.hoursItem}>
@@ -44,9 +44,8 @@ export default function LocationSection() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div className={`${styles.infoBlock} fade-up`}>
-            <h3 className={styles.infoTitle}>Contact</h3>
+            <h3 className={styles.infoTitle}>{t("location.contact")}</h3>
             <a href={RESTAURANT.phoneRaw} className={styles.infoLink}>
               {RESTAURANT.phone}
             </a>
@@ -54,13 +53,15 @@ export default function LocationSection() {
               {RESTAURANT.email}
             </a>
           </div>
+
+          <Link href="/location" className={`${styles.viewMore} fade-up`}>
+            {t("location.viewMore")} →
+          </Link>
         </div>
 
-        {/* Map Placeholder */}
         <div className={`${styles.mapColumn} fade-up`}>
           <div className={styles.mapPlaceholder}>
             <div className={styles.mapGrid} aria-hidden="true">
-              {/* Decorative grid lines to suggest a map */}
               {Array.from({ length: 8 }).map((_, i) => (
                 <div key={`h-${i}`} className={styles.mapLineH} style={{ top: `${(i + 1) * 11}%` }} />
               ))}
@@ -68,7 +69,6 @@ export default function LocationSection() {
                 <div key={`v-${i}`} className={styles.mapLineV} style={{ left: `${(i + 1) * 11}%` }} />
               ))}
             </div>
-            {/* Pin */}
             <div className={styles.mapPin} aria-hidden="true">
               <div className={styles.mapPinDot} />
               <div className={styles.mapPinRing} />
@@ -80,7 +80,7 @@ export default function LocationSection() {
               className={styles.mapLink}
               aria-label="Open in Google Maps"
             >
-              Open in Maps →
+              {t("location.openMaps")} →
             </a>
           </div>
         </div>

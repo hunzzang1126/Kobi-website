@@ -165,6 +165,27 @@
   color: var(--color-text-dim);
 }
 
+/* View More Link */
+.viewMoreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-32);
+  padding: 0 var(--space-24);
+}
+
+.viewMoreLink {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.viewMoreLink:hover {
+  color: var(--color-gold-light);
+}
+
 /* ═══ DESKTOP ═══ */
 @media (min-width: 768px) {
   .gallerySection { padding: var(--space-128) 0; }

@@ -6,12 +6,14 @@ import SectionWrapper from "./ui/SectionWrapper";
 import InkDivider from "./InkDivider";
 import ParallaxKorean from "./ParallaxKorean";
 import { MENU_CATEGORIES } from "@/content/siteData";
+import { useLanguage } from "@/context/LanguageContext";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState(MENU_CATEGORIES[0].id);
   const tabsRef = useRef<HTMLDivElement>(null);
   const sectionRef = useScrollReveal({ threshold: 0.05 });
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (!tabsRef.current) return;
@@ -25,21 +27,16 @@ export default function MenuSection() {
 
   return (
     <SectionWrapper id="menu" className={styles.section}>
-      {/* Parallax background hangul */}
       <ParallaxKorean characters={["肉", "味"]} speed={0.1} />
 
       <div className={styles.menu} ref={sectionRef}>
-        {/* Header */}
         <div className={styles.header}>
           <InkDivider width={140} />
-          <span className={`${styles.label} reveal`}>The Menu</span>
-          <h2 className={`${styles.heading} reveal`}>Crafted with Intent</h2>
-          <p className={`${styles.subheading} reveal`}>
-            Every cut, every side, every sip — chosen with purpose.
-          </p>
+          <span className={`${styles.label} reveal`}>{t("menu.label")}</span>
+          <h2 className={`${styles.heading} reveal`}>{t("menu.heading")}</h2>
+          <p className={`${styles.subheading} reveal`}>{t("menu.subheading")}</p>
         </div>
 
-        {/* Tabs */}
         <div className={`${styles.tabs} reveal`} ref={tabsRef} role="tablist" aria-label="Menu categories">
           {MENU_CATEGORIES.map((category) => (
             <button
@@ -57,7 +54,6 @@ export default function MenuSection() {
           ))}
         </div>
 
-        {/* Menu Items */}
         <div
           className={styles.menuItems}
           role="tabpanel"
@@ -81,7 +77,6 @@ export default function MenuSection() {
           ))}
         </div>
 
-        {/* Bottom ink divider */}
         <InkDivider width={100} />
       </div>
     </SectionWrapper>
