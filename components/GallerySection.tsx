@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./gallery-section.module.css";
 import InkDivider from "./InkDivider";
@@ -59,11 +60,17 @@ export default function GallerySection() {
               onMouseLeave={() => handleMouseLeave(index)}
             >
               <div
-                className={styles.imagePlaceholder}
+                className={styles.imageCard}
                 style={{ aspectRatio: item.aspectRatio }}
-                role="img"
-                aria-label={item.alt}
               >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 768px) 280px, (max-width: 1024px) 380px, 440px"
+                  className={styles.galleryImage}
+                  loading="lazy"
+                />
                 <div className={styles.imageGradient} />
                 <div className={styles.imageNoise} aria-hidden="true" />
                 <div className={styles.shine} aria-hidden="true" />

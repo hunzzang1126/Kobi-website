@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./detail-page.module.css";
 import InkDivider from "@/components/InkDivider";
 import { GALLERY_ITEMS } from "@/content/siteData";
@@ -36,8 +37,15 @@ export default function GalleryPageContent() {
                   aspectRatio: item.aspectRatio,
                 }}
               >
-                <div className={styles.imagePlaceholder}>
-                  <div className={styles.imageGradient} />
+                <div className={styles.galleryCardInner}>
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className={styles.galleryPageImage}
+                    loading="lazy"
+                  />
                   <div className={styles.galleryOverlay}>
                     <span className={styles.galleryCaption}>{item.alt}</span>
                   </div>

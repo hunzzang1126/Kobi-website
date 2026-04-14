@@ -39,9 +39,15 @@ export default function AboutPageContent() {
         <div className={styles.container}>
           <div className={styles.twoColumn}>
             <div className={`${styles.columnImage} reveal-left`}>
-              <div className={styles.imagePlaceholder}>
-                <div className={styles.imageGradient} />
-              </div>
+              <Image
+                src="/images/sotbap-eel.jpg"
+                alt="KOBI eel sotbap with banchan"
+                width={1200}
+                height={800}
+                className={styles.detailImage}
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
               <div className={styles.frameCornerTR} aria-hidden="true" />
               <div className={styles.frameCornerBL} aria-hidden="true" />
             </div>
@@ -62,9 +68,15 @@ export default function AboutPageContent() {
         <div className={styles.container}>
           <div className={`${styles.twoColumn} ${styles.reversed}`}>
             <div className={`${styles.columnImage} reveal-right`}>
-              <div className={styles.imagePlaceholder}>
-                <div className={styles.imageGradient} />
-              </div>
+              <Image
+                src="/images/grill-fire.jpg"
+                alt="Wagyu grilling over open flame"
+                width={1400}
+                height={933}
+                className={styles.detailImage}
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
               <div className={styles.frameCornerTR} aria-hidden="true" />
               <div className={styles.frameCornerBL} aria-hidden="true" />
             </div>

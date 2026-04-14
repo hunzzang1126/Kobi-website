@@ -20,9 +20,15 @@ export default function AboutSection() {
       <div className={styles.about} ref={sectionRef}>
         <div className={`${styles.imageColumn} reveal-left`}>
           <div className={styles.imageWrapper}>
-            <div className={styles.imagePlaceholder} aria-label="Atmospheric interior photo">
-              <div className={styles.imageGradient} />
-            </div>
+            <Image
+              src="/images/sotbap-steak.jpg"
+              alt="KOBI signature steak sotbap set"
+              width={1200}
+              height={800}
+              className={styles.aboutImage}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 45vw"
+            />
             <div className={styles.frameCornerTR} aria-hidden="true" />
             <div className={styles.frameCornerBL} aria-hidden="true" />
           </div>

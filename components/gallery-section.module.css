@@ -66,18 +66,19 @@
   will-change: transform;
 }
 
-.imagePlaceholder {
+.imageCard {
   width: 100%;
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at 50% 60%, rgba(196, 113, 59, 0.1) 0%, transparent 60%),
-    linear-gradient(160deg, #15120F 0%, #1C1814 40%, #110E0C 100%);
   border: 1px solid var(--color-border);
   transition: border-color 0.3s var(--ease-out);
 }
 
-.card:hover .imagePlaceholder {
+.galleryImage {
+  object-fit: cover;
+}
+
+.card:hover .imageCard {
   border-color: var(--color-gold);
 }
 

@@ -231,10 +231,10 @@ export const MENU_CATEGORIES: MenuCategory[] = [
 
 // —— Gallery ——
 export const GALLERY_ITEMS = [
-  { alt: "Charcoal grill with flames", aspectRatio: "3/4" },
-  { alt: "Wagyu searing on binchotan", aspectRatio: "4/3" },
-  { alt: "Banchan spread from above", aspectRatio: "1/1" },
-  { alt: "Interior — warm ambient lighting", aspectRatio: "16/9" },
-  { alt: "Smoke rising from the grill", aspectRatio: "3/4" },
-  { alt: "Cocktail with fire garnish", aspectRatio: "4/5" },
+  { alt: "Charcoal grill with flames", aspectRatio: "3/4", src: "/images/grill-fire.jpg" },
+  { alt: "Signature sotbap set from above", aspectRatio: "4/3", src: "/images/sotbap-steak.jpg" },
+  { alt: "Eel sotbap with banchan", aspectRatio: "1/1", src: "/images/sotbap-eel.jpg" },
+  { alt: "Wagyu searing on binchotan", aspectRatio: "16/9", src: "/images/grill-fire.jpg" },
+  { alt: "Premium sotbap presentation", aspectRatio: "3/4", src: "/images/sotbap-steak.jpg" },
+  { alt: "BBQ eel sotbap set", aspectRatio: "4/5", src: "/images/sotbap-eel.jpg" },
 ] as const;
