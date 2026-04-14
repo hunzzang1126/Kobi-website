@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Playfair_Display, Inter } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
@@ -91,18 +92,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
-        {/* Force scroll to top BEFORE React hydration — prevents browser scroll restoration */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `if(history.scrollRestoration){history.scrollRestoration="manual"}window.scrollTo(0,0)`,
-          }}
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body>
+        {/* beforeInteractive = injected into <head> of initial HTML, runs before ANY JS */}
+        <Script src="/scroll-top.js" strategy="beforeInteractive" />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
