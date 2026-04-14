@@ -1,0 +1,44 @@
+/* Scroll Progress — Living gold line */
+
+.container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  z-index: var(--z-progress);
+  pointer-events: none;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--color-gold),
+    var(--color-ember)
+  );
+  transition: height 0.05s linear;
+  border-radius: 0 0 2px 2px;
+}
+
+.dot {
+  position: absolute;
+  right: -3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 12px var(--color-gold-glow),
+              0 0 30px rgba(212, 168, 85, 0.15);
+  transform: translateY(-50%);
+  transition: top 0.05s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    box-shadow: none;
+  }
+}

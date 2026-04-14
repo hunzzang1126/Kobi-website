@@ -1,0 +1,28 @@
+/* Parallax Korean Characters */
+
+.container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.char {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-weight: 300;
+  color: var(--color-blush);
+  will-change: transform;
+  user-select: none;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  transition: transform 0.1s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .char {
+    transition: none;
+    transform: none !important;
+  }
+}

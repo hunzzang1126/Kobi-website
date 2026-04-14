@@ -1,0 +1,184 @@
+/* Gallery Section — 3D Tilt, Dynamic */
+
+.gallerySection {
+  width: 100%;
+  padding: var(--space-96) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ═══ HEADER ═══ */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: 0 var(--space-24);
+  margin-bottom: var(--space-48);
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  color: var(--color-blush);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+/* ═══ SCROLL CONTAINER ═══ */
+.scrollContainer {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  cursor: grab;
+}
+.scrollContainer::-webkit-scrollbar { display: none; }
+.scrollContainer:active { cursor: grabbing; }
+
+.track {
+  display: flex;
+  gap: var(--space-16);
+  padding: 0 var(--space-24);
+  width: max-content;
+}
+
+/* ═══ CARD — 3D TILT ═══ */
+.card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: 280px;
+  overflow: visible;
+  position: relative;
+  transition: transform 0.4s var(--ease-dramatic);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 60%, rgba(196, 113, 59, 0.1) 0%, transparent 60%),
+    linear-gradient(160deg, #15120F 0%, #1C1814 40%, #110E0C 100%);
+  border: 1px solid var(--color-border);
+  transition: border-color 0.3s var(--ease-out);
+}
+
+.card:hover .imagePlaceholder {
+  border-color: var(--color-gold);
+}
+
+.imageGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 10, 10, 0.6) 100%);
+}
+
+.imageNoise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+}
+
+/* Light reflection on hover */
+.shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+/* Hover overlay */
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.65);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-24);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-dramatic);
+  z-index: 3;
+}
+
+.card:hover .hoverOverlay {
+  opacity: 1;
+}
+
+.hoverText {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+}
+
+.cardIndex {
+  display: block;
+  margin-top: var(--space-16);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text-dim);
+}
+
+/* Scroll hint */
+.scrollHint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-16);
+  margin-top: var(--space-32);
+  padding: 0 var(--space-24);
+}
+
+.hintLine {
+  width: 30px;
+  height: 1px;
+  background: var(--color-gold);
+  opacity: 0.3;
+}
+
+.hintText {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+}
+
+/* ═══ DESKTOP ═══ */
+@media (min-width: 768px) {
+  .gallerySection { padding: var(--space-128) 0; }
+  .header { padding: 0 var(--space-48); margin-bottom: var(--space-64); }
+  .track { gap: var(--space-24); padding: 0 var(--space-48); }
+  .card { width: 380px; }
+}
+@media (min-width: 1024px) {
+  .header { padding: 0 var(--space-64); }
+  .track { padding: 0 var(--space-64); }
+  .card { width: 440px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  .hoverOverlay { transition: none; }
+}

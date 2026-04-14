@@ -1,0 +1,184 @@
+/* About Section — Dynamic, Korean-inspired */
+
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-64);
+}
+
+/* ═══ IMAGE COLUMN ═══ */
+.imageColumn {
+  width: 100%;
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.imagePlaceholder {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background:
+    radial-gradient(ellipse at 40% 50%, rgba(196, 113, 59, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 60% 30%, rgba(190, 162, 85, 0.06) 0%, transparent 50%),
+    linear-gradient(160deg, #151210 0%, #1A1614 50%, #120F0D 100%);
+  overflow: hidden;
+}
+
+.imageGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    rgba(10, 10, 10, 0.4) 100%
+  );
+}
+
+/* Decorative frame corners — Korean traditional touch */
+.frameCornerTR {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 50px;
+  height: 50px;
+  border-top: 1px solid var(--color-gold);
+  border-right: 1px solid var(--color-gold);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.frameCornerBL {
+  position: absolute;
+  bottom: -8px;
+  left: -8px;
+  width: 50px;
+  height: 50px;
+  border-bottom: 1px solid var(--color-gold);
+  border-left: 1px solid var(--color-gold);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Vertical Korean text beside image */
+.verticalKorean {
+  position: absolute;
+  top: 50%;
+  right: -32px;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  color: var(--color-gold);
+  opacity: 0.3;
+  display: none;
+}
+
+/* ═══ TEXT COLUMN ═══ */
+.textColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  max-width: 560px;
+}
+
+/* Korean pattern divider */
+.koreanDivider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12, 12px);
+  margin-bottom: var(--space-8);
+}
+
+.divLine {
+  width: 32px;
+  height: 1px;
+  background: var(--color-gold);
+  opacity: 0.4;
+}
+
+.divDiamond {
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--color-gold);
+  transform: rotate(45deg);
+  opacity: 0.5;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  color: var(--color-blush);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  margin-bottom: var(--space-8);
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.signature {
+  margin-top: var(--space-16);
+}
+
+/* ═══ Desktop Layout ═══ */
+@media (min-width: 768px) {
+  .about {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-96);
+  }
+
+  .imageColumn {
+    flex: 0.9;
+  }
+
+  .textColumn {
+    flex: 1;
+  }
+
+  .verticalKorean {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about {
+    gap: var(--space-128);
+  }
+
+  .textColumn {
+    max-width: 480px;
+  }
+
+  .frameCornerTR {
+    width: 70px;
+    height: 70px;
+    top: -12px;
+    right: -12px;
+  }
+
+  .frameCornerBL {
+    width: 70px;
+    height: 70px;
+    bottom: -12px;
+    left: -12px;
+  }
+}

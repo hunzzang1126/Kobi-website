@@ -1,0 +1,54 @@
+/* Ink Brush Divider */
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-8) 0;
+}
+
+.svg {
+  overflow: visible;
+}
+
+.stroke {
+  stroke: var(--color-gold);
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  opacity: 0.7;
+  transition: none;
+}
+
+.strokeThin {
+  stroke: var(--color-gold);
+  stroke-dasharray: 280;
+  stroke-dashoffset: 280;
+  opacity: 0.3;
+  transition: none;
+}
+
+.animate .stroke {
+  animation: inkDraw 1.5s var(--ease-dramatic) forwards;
+  --ink-length: 320;
+}
+
+.animate .strokeThin {
+  animation: inkDraw 1.8s var(--ease-dramatic) 0.3s forwards;
+  --ink-length: 280;
+}
+
+@keyframes inkDraw {
+  from {
+    stroke-dashoffset: var(--ink-length);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stroke,
+  .strokeThin {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
