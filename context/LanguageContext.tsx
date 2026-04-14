@@ -21,26 +21,15 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
 
-const COOKIE_NAME = "kobi-lang";
-const COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year
-
-function getCookie(name: string): string | null {
-  if (typeof document === "undefined") return null;
-  const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
-  return match ? match[2] : null;
-}
-
-function setCookie(name: string, value: string) {
-  document.cookie = `${name}=${value};path=/;max-age=${COOKIE_MAX_AGE};SameSite=Lax`;
-}
+const SESSION_KEY = "kobi-lang";
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("en");
   const [hasChosen, setHasChosen] = useState(true); // assume chosen until checked
 
-  // Check cookie on mount
+  // Check sessionStorage on mount — resets every new browser session
   useEffect(() => {
-    const saved = getCookie(COOKIE_NAME) as Locale | null;
+    const saved = sessionStorage.getItem(SESSION_KEY) as Locale | null;
     if (saved === "en" || saved === "ko") {
       setLocaleState(saved);
       setHasChosen(true);
@@ -51,7 +40,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
-    setCookie(COOKIE_NAME, newLocale);
+    sessionStorage.setItem(SESSION_KEY, newLocale);
     setHasChosen(true);
     document.documentElement.lang = newLocale;
   }, []);

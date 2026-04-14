@@ -13,7 +13,7 @@ export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState(MENU_CATEGORIES[0].id);
   const tabsRef = useRef<HTMLDivElement>(null);
   const sectionRef = useScrollReveal({ threshold: 0.05 });
-  const { t } = useLanguage();
+  const { locale, t } = useLanguage();
 
   useEffect(() => {
     if (!tabsRef.current) return;
@@ -24,6 +24,7 @@ export default function MenuSection() {
   }, [activeCategory]);
 
   const currentCategory = MENU_CATEGORIES.find((cat) => cat.id === activeCategory);
+  const isKo = locale === "ko";
 
   return (
     <SectionWrapper id="menu" className={styles.section}>
@@ -49,10 +50,17 @@ export default function MenuSection() {
               onClick={() => setActiveCategory(category.id)}
               id={`tab-${category.id}`}
             >
-              {category.label}
+              {isKo ? category.labelKo : category.label}
             </button>
           ))}
         </div>
+
+        {/* Category note (e.g. "Served with white Sotbap") */}
+        {currentCategory && (currentCategory.note || currentCategory.noteKo) && (
+          <p className={styles.categoryNote}>
+            {isKo ? (currentCategory.noteKo || currentCategory.note) : currentCategory.note}
+          </p>
+        )}
 
         <div
           className={styles.menuItems}
@@ -68,11 +76,18 @@ export default function MenuSection() {
               style={{ animationDelay: `${index * 0.06}s` }}
             >
               <div className={styles.menuItemHeader}>
-                <h3 className={styles.itemName}>{item.name}</h3>
+                <h3 className={styles.itemName}>
+                  {isKo ? item.nameKo : item.name}
+                </h3>
                 <span className={styles.itemDots} aria-hidden="true" />
                 <span className={styles.itemPrice}>{item.price}</span>
               </div>
-              <p className={styles.itemDescription}>{item.description}</p>
+              <p className={styles.itemSubName}>
+                {isKo ? item.name : item.nameKo}
+              </p>
+              {item.description && (
+                <p className={styles.itemDescription}>{item.description}</p>
+              )}
             </div>
           ))}
         </div>
@@ -82,3 +97,4 @@ export default function MenuSection() {
     </SectionWrapper>
   );
 }
+

@@ -6,13 +6,20 @@
 
 export interface MenuItem {
   name: string;
-  description: string;
+  nameKo: string;
+  description?: string;
   price: string;
+  /** For items with multiple size/price options (e.g. draft beer) */
+  variants?: { label: string; price: string }[];
 }
 
 export interface MenuCategory {
   id: string;
   label: string;
+  labelKo: string;
+  /** Optional note shown below category header */
+  note?: string;
+  noteKo?: string;
   items: MenuItem[];
 }
 
@@ -67,133 +74,157 @@ export const ABOUT = {
 
 // —— Menu Data ——
 export const MENU_CATEGORIES: MenuCategory[] = [
-  {
-    id: "starters",
-    label: "Starters",
-    items: [
-      {
-        name: "Wagyu Tartare",
-        description: "Hand-cut A5 wagyu, pine nut, sesame oil, egg yolk, rice cracker",
-        price: "$32",
-      },
-      {
-        name: "Tuna Sashimi",
-        description: "Bluefin tuna, gochujang vinaigrette, perilla leaf",
-        price: "$28",
-      },
-      {
-        name: "Steamed Egg Soufflé",
-        description: "Silken egg custard, anchovy broth, scallion",
-        price: "$14",
-      },
-      {
-        name: "Kimchi Pancake",
-        description: "House-fermented kimchi, crisp batter, soy dipping sauce",
-        price: "$18",
-      },
-      {
-        name: "Japchae",
-        description: "Sweet potato glass noodles, seasonal vegetables, sesame",
-        price: "$16",
-      },
-    ],
-  },
-  {
-    id: "bbq-cuts",
-    label: "BBQ Cuts",
-    items: [
-      {
-        name: "Prime Galbi",
-        description: "USDA Prime bone-in short rib, house marinade, 48-hour cure",
-        price: "$58",
-      },
-      {
-        name: "Wagyu Chadolbaegi",
-        description: "Paper-thin wagyu brisket, grilled to order",
-        price: "$42",
-      },
-      {
-        name: "Duroc Pork Belly",
-        description: "Heritage pork, thick-cut, served with ssam wraps",
-        price: "$34",
-      },
-      {
-        name: "Prime Bulgogi",
-        description: "USDA Prime ribeye, soy-pear marinade, sesame",
-        price: "$38",
-      },
-      {
-        name: "Dry-Aged Ribeye",
-        description: "45-day dry-aged, whole cut, carved tableside",
-        price: "$95",
-      },
-      {
-        name: "A5 Wagyu Striploin",
-        description: "Japanese A5 wagyu, 4oz portion, served with coarse salt",
-        price: "$145",
-      },
-    ],
-  },
+  // ── 1. Side Menu ──
   {
     id: "sides",
-    label: "Sides & Banchan",
+    label: "Side Menu",
+    labelKo: "사이드 메뉴",
     items: [
-      {
-        name: "Banchan Selection",
-        description: "Rotating selection of house-made seasonal banchan",
-        price: "Complimentary",
-      },
-      {
-        name: "Steamed Rice",
-        description: "Korean short grain, stone pot, nurungji crust",
-        price: "$6",
-      },
-      {
-        name: "Doenjang Jjigae",
-        description: "Fermented soybean stew, tofu, seasonal vegetables",
-        price: "$16",
-      },
-      {
-        name: "Ssam Set",
-        description: "Perilla, red leaf lettuce, garlic, ssamjang",
-        price: "$10",
-      },
-      {
-        name: "Corn Cheese",
-        description: "Sweet corn, mozzarella, butter, scallion",
-        price: "$14",
-      },
+      { name: "Seafood Pancake with Chives", nameKo: "해물 부추전", price: "$16.99" },
+      { name: "Tteokgalbi (Marinated Wagyu Patty)", nameKo: "떡갈비", price: "$13.99" },
+      { name: "Tteokbokki (Korean Rice Cakes in Spicy Sauce)", nameKo: "떡볶이", price: "$13.99" },
+      { name: "Deep-Fried Eel with Citrus Soy Sauce", nameKo: "장어 유린기", price: "$24.99" },
+      { name: "Deep-Fried Octopus with Sweet and Sour Sauce", nameKo: "낙지탕수육", price: "$35.99" },
     ],
   },
+  // ── 2. Soup with White Sotbap ──
+  {
+    id: "soup",
+    label: "Soup",
+    labelKo: "식사류",
+    note: "Served with white Sotbap",
+    noteKo: "흰 솥밥 포함",
+    items: [
+      { name: "Hangover Soup", nameKo: "우거지 해장국", price: "$21.99" },
+      { name: "Beef Rib Soup", nameKo: "갈비탕", price: "$24.99" },
+      { name: "Pork Kimchi Soup", nameKo: "돼지 김치찌개", price: "$20.99" },
+      { name: "Spicy Tofu Soup with Seafood and Pork", nameKo: "순두부찌개", price: "$20.99" },
+      { name: "Spicy Beef Intestine Soup", nameKo: "곱창 뚝배기", price: "$23.99" },
+      { name: "Pork-bone Soup", nameKo: "감자탕", price: "$19.99" },
+      { name: "Spicy Beef Soup", nameKo: "육개장", price: "$21.99" },
+      { name: "Spicy Monkfish Stew", nameKo: "아구 매운탕", price: "$23.99" },
+    ],
+  },
+  // ── 3. Hotpot ──
+  {
+    id: "hotpot",
+    label: "Hotpot",
+    labelKo: "전골류",
+    note: "Served with white Sotbap",
+    noteKo: "흰 솥밥 포함",
+    items: [
+      { name: "Beef Intestine Hotpot", nameKo: "곱창전골", price: "$41.99" },
+      { name: "Pork Kimchi Hotpot", nameKo: "돼지고기 김치전골", price: "$39.99" },
+      { name: "Galbi Hotpot", nameKo: "갈비탕 전골", price: "$61.99" },
+      { name: "Pork-bone Hotpot", nameKo: "감자탕 전골", price: "$37.99" },
+    ],
+  },
+  // ── 4. Special Sotbap ──
+  {
+    id: "sotbap",
+    label: "Special Sotbap",
+    labelKo: "스페셜 솥밥",
+    note: "All sets include banchan, salad, and soup (soy-seasoned)",
+    noteKo: "모든 세트에는 반찬, 샐러드, 국이 포함됩니다 (간장 양념)",
+    items: [
+      { name: "Steak Sotbap", nameKo: "스테이크 솥밥", price: "$23.99" },
+      { name: "BBQ Eel Sotbap", nameKo: "장어 솥밥", price: "$23.99" },
+      { name: "Abalone Sotbap", nameKo: "전복 솥밥", price: "$23.99" },
+      { name: "Pollock Roe Sotbap", nameKo: "명란 솥밥", price: "$23.99" },
+      { name: "Spicy Eggplant Sotbap", nameKo: "매콤 가지 솥밥", price: "$18.99" },
+      { name: "Mushroom Sotbap", nameKo: "버섯 솥밥", price: "$21.99" },
+      { name: "Extra Protein", nameKo: "단백질 추가", price: "+$10.00" },
+    ],
+  },
+  // ── 5. Sotbap Combo ──
+  {
+    id: "combo",
+    label: "Sotbap Combo",
+    labelKo: "솥밥 콤보",
+    note: "All combos include soup, japchae, and jeon",
+    noteKo: "모든 콤보는 국, 잡채, 전이 포함됩니다",
+    items: [
+      { name: "BBQ Short Rib + Sotbap", nameKo: "LA 갈비 + 솥밥", price: "$30.00" },
+      { name: "Spicy Stir-Fried Octopus + Sotbap", nameKo: "낙지볶음 + 솥밥", price: "$25.00" },
+      { name: "Korean Bulgogi + Sotbap", nameKo: "뚝배기 불고기 + 솥밥", price: "$25.00" },
+      { name: "Stir-Fried Spicy Pork + Sotbap", nameKo: "제육볶음 + 솥밥", price: "$23.00" },
+      { name: "Braised Short Ribs + Sotbap", nameKo: "뚝배기 갈비찜 + 솥밥", price: "$27.00" },
+    ],
+  },
+  // ── 6. BBQ ──
+  {
+    id: "bbq",
+    label: "BBQ",
+    labelKo: "구이류",
+    note: "Minimum 2 servings · Includes rice, soup, and steamed egg",
+    noteKo: "최소 2인분 이상 주문 · 밥, 국, 계란찜 제공",
+    items: [
+      { name: "Australian Wagyu Short Rib (200g)", nameKo: "와규 살치살", description: "30 days aged", price: "$39.99" },
+      { name: "Australian Wagyu Rib Eye (220g)", nameKo: "와규 꽃등심", description: "42 days aged", price: "$50.99" },
+      { name: "Wagyu Flat Iron", nameKo: "와규 부챗살", price: "$39.99" },
+      { name: "Marinated Beef Rib (250g)", nameKo: "양념 갈비살", price: "$39.99" },
+      { name: "Australian Wagyu Beef Rib Seasoned (200g)", nameKo: "와규 주물럭", price: "$39.99" },
+      { name: "Thick Sliced Pork Belly (200g)", nameKo: "벌집 삼겹살", price: "$25.99" },
+      { name: "Thin Sliced Pork Belly (200g)", nameKo: "대패 삼겹살", price: "$25.99" },
+      { name: "Pork Neck (200g)", nameKo: "생목살", price: "$25.99" },
+      { name: "Pork Jowl (200g)", nameKo: "항정살", price: "$27.99" },
+      { name: "Beef Belly (200g)", nameKo: "우삼겹살", price: "$27.99" },
+      { name: "Wagyu Platter (600g)", nameKo: "코비 소고기 한판", description: "Short Rib + Flat Iron + Rib Eye", price: "$124.99" },
+      { name: "Pork Platter (500g)", nameKo: "코비 돼지 한판", description: "Neck + Belly + Jowl", price: "$52.99" },
+    ],
+  },
+  // ── 7. Korean Eel Special ──
+  {
+    id: "eel",
+    label: "Eel Special",
+    labelKo: "장어 스페셜",
+    items: [
+      { name: "Salt Grilled Eel", nameKo: "소금 장어구이", description: "With side dish, egg, soup", price: "$55.00" },
+      { name: "Marinated Grilled Eel", nameKo: "양념 장어구이", price: "$58.00" },
+      { name: "Eel + Wagyu Short Rib + Marinated Rib", nameKo: "장어구이 + 소고기 콤보", price: "$110.00" },
+      { name: "Eel + Australian Wagyu Rib Eye", nameKo: "장어구이 + 와규 꽃등심", price: "$100.00" },
+    ],
+  },
+  // ── 8. Noodles & Dishes ──
+  {
+    id: "noodles",
+    label: "Noodles & Dishes",
+    labelKo: "면 및 요리류",
+    items: [
+      { name: "Spicy Braised Monkfish", nameKo: "아구찜", price: "$49.99" },
+      { name: "Spicy Stir-Fried Octopus", nameKo: "낙지볶음", price: "$46.99" },
+      { name: "Cold Noodle", nameKo: "물냉면", price: "$15.99" },
+      { name: "Spicy Cold Noodle", nameKo: "비빔냉면", price: "$16.99" },
+      { name: "Kobi Cold Noodle", nameKo: "코비냉면", price: "$17.99" },
+      { name: "Kobi Cold Noodle Platter", nameKo: "코비 쟁반냉면", price: "$26.99" },
+    ],
+  },
+  // ── 9. Spicy Chicken/Squid & Hotpot ──
+  {
+    id: "chicken-squid",
+    label: "Chicken & Squid",
+    labelKo: "닭갈비 · 샤브",
+    items: [
+      { name: "Spicy Chicken and Cheese", nameKo: "닭갈비", price: "$44.99" },
+      { name: "Spicy Squid and Cheese", nameKo: "오징어", price: "$44.99" },
+      { name: "Spicy Squid and Pork Belly with Cheese", nameKo: "오삼불고기", price: "$44.99" },
+      { name: "Korean Hot Pot (2 People)", nameKo: "등촌 샤브샤브 2인", description: "Watercress, mushrooms, beef, noodles", price: "$45.99" },
+      { name: "Korean Hot Pot (3 People)", nameKo: "등촌 샤브샤브 3인", description: "Watercress, mushrooms, beef, noodles", price: "$65.99" },
+    ],
+  },
+  // ── 10. Drinks ──
   {
     id: "drinks",
     label: "Drinks",
+    labelKo: "주류 · 음료",
     items: [
-      {
-        name: "Soju Flight",
-        description: "Selection of three premium sojus",
-        price: "$22",
-      },
-      {
-        name: "Makgeolli",
-        description: "Unfiltered rice wine, house-selected",
-        price: "$16",
-      },
-      {
-        name: "Smoke & Ember",
-        description: "Mezcal, yuzu, charcoal-infused honey, shiso",
-        price: "$19",
-      },
-      {
-        name: "Seoul Negroni",
-        description: "Soju-washed Campari, sweet vermouth, gochugaru",
-        price: "$18",
-      },
-      {
-        name: "Wine Selection",
-        description: "Curated list — ask your server for today's pairings",
-        price: "Market",
-      },
+      { name: "Soju", nameKo: "소주", price: "$17.99 – $19.99" },
+      { name: "Flavour Soju", nameKo: "과일소주", price: "$17.99" },
+      { name: "Makgeolli", nameKo: "막걸리", price: "$16.99" },
+      { name: "Domestic Beer", nameKo: "국산 맥주", price: "$5.99" },
+      { name: "Imported Beer", nameKo: "수입 맥주", price: "$7.99 – $11.99" },
+      { name: "Asahi Draft", nameKo: "아사히 생맥주", price: "Pint $6.99 / Pitcher $23.99" },
+      { name: "Pop", nameKo: "탄산음료", price: "$2.50" },
     ],
   },
 ];
