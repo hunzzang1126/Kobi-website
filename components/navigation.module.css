@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: var(--z-sticky);
+  z-index: var(--z-overlay);
   transition: background-color 0.4s var(--ease-out), backdrop-filter 0.4s var(--ease-out);
   background-color: transparent;
 }
@@ -141,9 +141,13 @@
 /* Mobile Menu Overlay */
 .mobileMenu {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
   z-index: var(--z-modal);
-  background-color: rgba(10, 10, 10, 0.97);
+  background-color: rgba(8, 8, 8, 0.98);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,6 +156,8 @@
   transition:
     opacity 0.4s var(--ease-out),
     visibility 0.4s var(--ease-out);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 .mobileMenuOpen {
