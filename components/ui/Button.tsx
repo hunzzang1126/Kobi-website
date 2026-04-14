@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./button.module.css";
 
 interface ButtonProps {
@@ -30,6 +32,18 @@ export default function Button({
     .filter(Boolean)
     .join(" ");
 
+  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // For hash links: smooth scroll without changing URL hash
+    if (href?.startsWith("#")) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+      // Do NOT update window.location.hash — prevents stale anchor on reload
+    }
+  };
+
   if (href) {
     return (
       <a
@@ -37,6 +51,7 @@ export default function Button({
         className={classNames}
         aria-label={ariaLabel}
         id={id}
+        onClick={handleHashClick}
       >
         {children}
       </a>

@@ -30,6 +30,12 @@ export default function ReservationSection() {
             className={styles.reserveButton}
             id="reserve-main-btn"
             aria-label="Reserve a table at KOBI"
+            onClick={(e) => {
+              if (LINKS.reservation.startsWith("#")) {
+                e.preventDefault();
+                // Currently links to self (#reserve) — will be replaced with real booking URL
+              }
+            }}
           >
             {t("reserve.button")}
           </a>

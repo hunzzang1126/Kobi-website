@@ -117,6 +117,12 @@ export default function Navigation() {
             href={LINKS.reservation}
             className={styles.reserveBtn}
             id="nav-reserve-btn"
+            onClick={(e) => {
+              if (LINKS.reservation.startsWith("#")) {
+                e.preventDefault();
+                document.querySelector(LINKS.reservation)?.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
             {t("nav.reserve")}
           </a>
