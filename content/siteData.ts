@@ -49,7 +49,7 @@ export const RESTAURANT = {
 
 // —— External Links ——
 export const LINKS = {
-  reservation: "#reserve",
+  reservation: "tel:+12895971548",
   instagram: "https://instagram.com/kobitornto",
   googleMaps: "https://maps.google.com/?q=100+Steeles+Ave+W+Thornhill+ON+L4J+2L1",
 } as const;
