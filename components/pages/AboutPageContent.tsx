@@ -41,7 +41,7 @@ export default function AboutPageContent() {
             <div className={`${styles.columnImage} reveal-left`}>
               <Image
                 src="/images/sotbap-eel.jpg"
-                alt="KOBI eel sotbap with banchan"
+                alt="KOBI abalone sotbap with banchan"
                 width={1200}
                 height={800}
                 className={styles.detailImage}

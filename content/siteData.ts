@@ -233,8 +233,8 @@ export const MENU_CATEGORIES: MenuCategory[] = [
 export const GALLERY_ITEMS = [
   { alt: "Charcoal grill with flames", aspectRatio: "3/4", src: "/images/grill-fire.jpg" },
   { alt: "Signature sotbap set from above", aspectRatio: "4/3", src: "/images/sotbap-steak.jpg" },
-  { alt: "Eel sotbap with banchan", aspectRatio: "1/1", src: "/images/sotbap-eel.jpg" },
+  { alt: "Abalone sotbap with banchan", aspectRatio: "1/1", src: "/images/sotbap-eel.jpg" },
   { alt: "Wagyu searing on binchotan", aspectRatio: "16/9", src: "/images/grill-fire.jpg" },
   { alt: "Premium sotbap presentation", aspectRatio: "3/4", src: "/images/sotbap-steak.jpg" },
-  { alt: "BBQ eel sotbap set", aspectRatio: "4/5", src: "/images/sotbap-eel.jpg" },
+  { alt: "Abalone sotbap set", aspectRatio: "4/5", src: "/images/sotbap-eel.jpg" },
 ] as const;
