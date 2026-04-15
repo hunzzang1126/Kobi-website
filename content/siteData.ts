@@ -34,7 +34,7 @@ export const RESTAURANT = {
   tagline: "Fire. Smoke. Soul.",
   subtitle: "THORNHILL",
   description:
-    "Premium Korean BBQ crafted over open flame. USDA Prime and above, house-made banchan, and an experience built around charcoal and craft.",
+    "Premium Korean BBQ crafted over open flame — an experience built around charcoal, craft, and soul.",
   address: "100 Steeles Ave W",
   city: "Thornhill, ON L4J 2L1",
   phone: "(289) 597-1548",
@@ -67,7 +67,6 @@ export const ABOUT = {
   heading: "The Art of Fire",
   paragraphs: [
     "Kobi is not a Korean BBQ restaurant. It is a study in flame — where prime cuts meet centuries-old grilling tradition, and every dish earns its place on the table.",
-    "We source only USDA Prime and above. Our banchan is made in-house, daily. The charcoal is binchotan. The standards are non-negotiable.",
     "No shortcuts. No compromises. Just fire, smoke, and soul.",
   ],
 } as const;

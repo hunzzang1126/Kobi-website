@@ -21,7 +21,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "KOBI — Premium Korean BBQ | Toronto",
   description:
-    "Charcoal-fired Korean BBQ in Toronto. USDA Prime cuts, house-made banchan, and an experience built around fire, smoke, and soul.",
+    "Charcoal-fired Korean BBQ in Thornhill — an experience built around fire, smoke, and soul.",
   keywords: [
     "Korean BBQ",
     "Toronto restaurant",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "KOBI — Premium Korean BBQ | Toronto",
     description:
-      "Charcoal-fired Korean BBQ in Toronto. USDA Prime cuts, house-made banchan, and an experience built around fire, smoke, and soul.",
+      "Charcoal-fired Korean BBQ in Thornhill — an experience built around fire, smoke, and soul.",
     type: "website",
     locale: "en_CA",
     siteName: "KOBI Toronto",
@@ -50,7 +50,7 @@ const jsonLd = {
   "@type": "Restaurant",
   name: "KOBI",
   description:
-    "Premium Korean BBQ restaurant in Thornhill featuring USDA Prime cuts, house-made banchan, and charcoal-fired grilling.",
+    "Premium Korean BBQ restaurant in Thornhill featuring charcoal-fired grilling and an experience built around fire, smoke, and soul.",
   servesCuisine: "Korean BBQ",
   address: {
     "@type": "PostalAddress",

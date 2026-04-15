@@ -25,8 +25,8 @@ export const translations: Record<string, Record<string, string>> = {
     "about.label": "Our Philosophy",
     "about.heading": "The Art of Fire",
     "about.p1": "Kobi is not a Korean BBQ restaurant. It is a study in flame — where prime cuts meet centuries-old grilling tradition, and every dish earns its place on the table.",
-    "about.p2": "We source only USDA Prime and above. Our banchan is made in-house, daily. The charcoal is binchotan. The standards are non-negotiable.",
-    "about.p3": "No shortcuts. No compromises. Just fire, smoke, and soul.",
+    "about.p2": "No shortcuts. No compromises. Just fire, smoke, and soul.",
+
     "about.viewMore": "Our Full Story",
     "about.verticalKorean": "With heart",
 
@@ -36,12 +36,12 @@ export const translations: Record<string, Record<string, string>> = {
     "aboutPage.intro": "KOBI was born from a simple belief: that the best Korean BBQ should honor its roots while embracing the finest ingredients the world has to offer.",
     "aboutPage.philosophy.label": "Philosophy",
     "aboutPage.philosophy.heading": "No Shortcuts",
-    "aboutPage.philosophy.p1": "We believe that great food cannot be rushed. Every cut of meat is carefully selected — USDA Prime and above, dry-aged to perfection. Our binchotan charcoal is sourced directly from Japanese artisans who have refined their craft for generations.",
-    "aboutPage.philosophy.p2": "Our banchan is made fresh each morning. Our sauces are fermented in-house. Every detail matters, because every detail is tasted.",
+    "aboutPage.philosophy.p1": "We believe that great food cannot be rushed. Every cut of meat is carefully selected, and every ingredient is chosen with intention. Quality is not a checkbox — it is the foundation of everything we do.",
+    "aboutPage.philosophy.p2": "Every detail matters, because every detail is tasted. From the sides to the sauces, nothing is an afterthought.",
     "aboutPage.craft.label": "The Craft",
     "aboutPage.craft.heading": "Fire as Tradition",
     "aboutPage.craft.p1": "Korean BBQ is not just cooking — it is a communal ritual. The table becomes a gathering place, the grill becomes a stage, and the meal becomes a shared experience that connects people to culture, to craft, and to each other.",
-    "aboutPage.craft.p2": "At KOBI, we honor this tradition with modern precision. Our tables are built around Japanese binchotan grills. The temperature, the timing, the cut — everything is calibrated for the perfect sear.",
+    "aboutPage.craft.p2": "At KOBI, we honor this tradition with modern precision. The temperature, the timing, the cut — everything is calibrated for the perfect sear.",
     "aboutPage.backHome": "Back to Home",
 
     // Menu
@@ -125,8 +125,8 @@ export const translations: Record<string, Record<string, string>> = {
     "about.label": "KOBI 소개",
     "about.heading": "불 앞에 서다",
     "about.p1": "Kobi는 그냥 고기 굽는 곳이 아닙니다. 불의 온도를 이해하고, 최상급 원육에 오랜 숯불 전통을 더해 한 접시 한 접시 완성하는 곳입니다.",
-    "about.p2": "USDA Prime 등급 이상만 사용합니다. 반찬은 매일 아침 직접 준비하고, 숯은 일본산 비장탄만 씁니다. 기본에 타협하지 않습니다.",
-    "about.p3": "빠른 길도, 대충도 없습니다. 오직 불과 연기, 그리고 정성뿐.",
+    "about.p2": "빠른 길도, 대충도 없습니다. 오직 불과 연기, 그리고 정성뿐.",
+
     "about.viewMore": "자세히 보기",
     "about.verticalKorean": "정성을 담다",
 
@@ -136,12 +136,12 @@ export const translations: Record<string, Record<string, string>> = {
     "aboutPage.intro": "KOBI는 하나의 생각에서 출발했습니다. 진짜 한식 바베큐라면, 전통의 깊이와 최고의 식재료가 함께해야 한다는 것.",
     "aboutPage.philosophy.label": "원칙",
     "aboutPage.philosophy.heading": "타협 없는 기본",
-    "aboutPage.philosophy.p1": "좋은 고기는 시간이 필요합니다. 전 메뉴의 원육은 USDA Prime 이상을 직접 선별하고, 충분한 숙성을 거칩니다. 숯은 대대로 기술을 이어온 일본 장인에게서 직접 들여옵니다.",
-    "aboutPage.philosophy.p2": "반찬은 매일 아침 직접 만들고, 장은 자체 발효합니다. 작은 것 하나도 소홀히 하지 않습니다. 결국 그 차이가 맛에 나오니까요.",
+    "aboutPage.philosophy.p1": "좋은 음식은 시간이 필요합니다. 하나하나 직접 고르고, 정성 들여 준비합니다. 품질은 체크리스트가 아니라, 모든 것의 기본입니다.",
+    "aboutPage.philosophy.p2": "작은 것 하나도 소홀히 하지 않습니다. 반찬부터 소스까지, 대충 넘어가는 건 없습니다.",
     "aboutPage.craft.label": "장인정신",
     "aboutPage.craft.heading": "함께 먹는 문화",
     "aboutPage.craft.p1": "한식 바베큐는 단순히 고기를 굽는 게 아닙니다. 불 앞에 둘러앉아, 함께 굽고 나눠 먹는 그 자체가 하나의 문화입니다. 식탁이 곧 모임의 장이 되고, 식사가 곧 경험이 됩니다.",
-    "aboutPage.craft.p2": "KOBI는 이 문화를 지키되 현대적으로 풀어냅니다. 모든 테이블에 비장탄 화로를 설치하고, 온도와 타이밍 하나까지 최고의 불맛을 위해 세팅합니다.",
+    "aboutPage.craft.p2": "KOBI는 이 문화를 지키되 현대적으로 풀어냅니다. 온도와 타이밍 하나까지, 최고의 불맛을 위해 세팅합니다.",
     "aboutPage.backHome": "메인으로",
 
     // Menu

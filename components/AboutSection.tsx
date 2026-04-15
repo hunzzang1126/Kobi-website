@@ -43,7 +43,6 @@ export default function AboutSection() {
           <h2 className={`${styles.heading} reveal`}>{t("about.heading")}</h2>
           <p className={`${styles.paragraph} reveal`}>{t("about.p1")}</p>
           <p className={`${styles.paragraph} reveal`}>{t("about.p2")}</p>
-          <p className={`${styles.paragraph} reveal`}>{t("about.p3")}</p>
 
           <Link href="/about" className={`${styles.viewMore} reveal`}>
             {t("about.viewMore")} →
