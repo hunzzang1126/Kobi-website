@@ -10,7 +10,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const NAV_ITEMS_KEYS = [
   { key: "nav.about", href: "#about", page: "/about" },
-  { key: "nav.menu", href: "#menu", page: "#menu" },
+  { key: "nav.menu", href: "#menu", page: "/menu" },
   { key: "nav.gallery", href: "#gallery", page: "/gallery" },
   { key: "nav.location", href: "#location", page: "/location" },
 ];

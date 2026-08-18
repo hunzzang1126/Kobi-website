@@ -49,6 +49,12 @@ export const translations: Record<string, Record<string, string>> = {
     "menu.heading": "Crafted with Intent",
     "menu.subheading": "Every cut, every side, every sip — chosen with purpose.",
 
+    // Menu Detail Page
+    "menuPage.label": "The Menu",
+    "menuPage.heading": "The Full Menu",
+    "menuPage.subheading": "Charcoal-grilled wagyu, stone-pot sotbap, soups, and more — Korean BBQ in Thornhill, done with intent.",
+    "menuPage.backHome": "Back to Home",
+
     // Gallery
     "gallery.label": "The Experience",
     "gallery.heading": "Fire & Atmosphere",
@@ -148,6 +154,12 @@ export const translations: Record<string, Record<string, string>> = {
     "menu.label": "메뉴",
     "menu.heading": "정성을 담은 한 상",
     "menu.subheading": "고기 한 점, 반찬 하나, 술 한 잔까지 — 다 이유가 있습니다.",
+
+    // Menu Detail Page
+    "menuPage.label": "메뉴",
+    "menuPage.heading": "전체 메뉴",
+    "menuPage.subheading": "숯불 와규, 솥밥, 찌개까지 — 코비의 전부를 한눈에 담았습니다.",
+    "menuPage.backHome": "메인으로",
 
     // Gallery
     "gallery.label": "분위기",

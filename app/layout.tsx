@@ -19,21 +19,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "KOBI — Premium Korean BBQ | Toronto",
+  metadataBase: new URL("https://www.kobitoronto.ca"),
+  title: "KOBI — Korean BBQ in Thornhill | Premium Charcoal BBQ Toronto",
   description:
-    "Charcoal-fired Korean BBQ in Thornhill — an experience built around fire, smoke, and soul.",
+    "Charcoal-fired Korean BBQ at Yonge & Steeles, Thornhill — Australian wagyu, stone-pot sotbap, and an experience built around fire, smoke, and soul.",
   keywords: [
     "Korean BBQ",
-    "Toronto restaurant",
+    "Korean BBQ Thornhill",
+    "Korean BBQ Toronto",
+    "Korean BBQ Yonge and Steeles",
+    "Korean restaurant Thornhill",
     "premium BBQ",
     "KOBI",
     "wagyu",
     "charcoal grill",
+    "sotbap",
   ],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
-    title: "KOBI — Premium Korean BBQ | Toronto",
+    title: "KOBI — Korean BBQ in Thornhill | Premium Charcoal BBQ Toronto",
     description:
-      "Charcoal-fired Korean BBQ in Thornhill — an experience built around fire, smoke, and soul.",
+      "Charcoal-fired Korean BBQ at Yonge & Steeles, Thornhill — Australian wagyu, stone-pot sotbap, and an experience built around fire, smoke, and soul.",
     type: "website",
     locale: "en_CA",
     siteName: "KOBI Toronto",
@@ -48,10 +56,12 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
+  "@id": "https://www.kobitoronto.ca/#restaurant",
   name: "KOBI",
+  url: "https://www.kobitoronto.ca",
   description:
     "Premium Korean BBQ restaurant in Thornhill featuring charcoal-fired grilling and an experience built around fire, smoke, and soul.",
-  servesCuisine: "Korean BBQ",
+  servesCuisine: ["Korean BBQ", "Korean"],
   address: {
     "@type": "PostalAddress",
     streetAddress: "100 Steeles Ave W",
@@ -60,8 +70,17 @@ const jsonLd = {
     postalCode: "L4J 2L1",
     addressCountry: "CA",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 43.7982,
+    longitude: -79.4207,
+  },
+  areaServed: ["Thornhill", "North York", "Markham", "Richmond Hill", "Toronto"],
   telephone: "+1-289-597-1548",
-  priceRange: "$$$",
+  priceRange: "$$-$$$",
+  acceptsReservations: "True",
+  hasMenu: "https://www.kobitoronto.ca/menu",
+  sameAs: ["https://instagram.com/kobitornto"],
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
