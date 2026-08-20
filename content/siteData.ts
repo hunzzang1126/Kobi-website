@@ -230,10 +230,10 @@ export const MENU_CATEGORIES: MenuCategory[] = [
 
 // —— Gallery ——
 export const GALLERY_ITEMS = [
-  { alt: "Charcoal grill with flames", aspectRatio: "3/4", src: "/images/grill-fire.jpg" },
-  { alt: "Signature sotbap set from above", aspectRatio: "4/3", src: "/images/sotbap-steak.jpg" },
-  { alt: "Abalone sotbap with banchan", aspectRatio: "1/1", src: "/images/sotbap-eel.jpg" },
-  { alt: "Wagyu searing on binchotan", aspectRatio: "16/9", src: "/images/grill-fire.jpg" },
-  { alt: "Premium sotbap presentation", aspectRatio: "3/4", src: "/images/sotbap-steak.jpg" },
-  { alt: "Abalone sotbap set", aspectRatio: "4/5", src: "/images/sotbap-eel.jpg" },
+  { alt: "Charcoal grill with open flames at KOBI Korean BBQ, Thornhill", aspectRatio: "3/4", src: "/images/grill-fire.jpg" },
+  { alt: "Signature steak sotbap set from above at KOBI Korean BBQ", aspectRatio: "4/3", src: "/images/sotbap-steak.jpg" },
+  { alt: "Abalone sotbap with banchan side dishes at KOBI, Thornhill", aspectRatio: "1/1", src: "/images/sotbap-eel.jpg" },
+  { alt: "Wagyu beef searing over charcoal at KOBI Korean BBQ Toronto", aspectRatio: "16/9", src: "/images/grill-fire.jpg" },
+  { alt: "Premium stone-pot sotbap presentation, Korean BBQ Thornhill", aspectRatio: "3/4", src: "/images/sotbap-steak.jpg" },
+  { alt: "Abalone sotbap set at KOBI Korean restaurant, Yonge and Steeles", aspectRatio: "4/5", src: "/images/sotbap-eel.jpg" },
 ] as const;

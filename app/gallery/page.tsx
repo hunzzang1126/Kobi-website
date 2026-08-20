@@ -5,8 +5,9 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 
 export const metadata: Metadata = {
-  title: "Gallery — KOBI | Premium Korean BBQ Toronto",
-  description: "Explore the atmosphere at KOBI — fire, food, and the space where it all happens.",
+  title: "Gallery — KOBI Korean BBQ Thornhill | Fire & Atmosphere",
+  description:
+    "Inside KOBI — charcoal grills, wagyu on open flame, stone-pot sotbap, and the room where it all happens. Korean BBQ in Thornhill, Toronto.",
 };
 
 export default function GalleryPage() {

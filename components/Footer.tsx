@@ -15,6 +15,14 @@ export default function Footer() {
         <div className={styles.content}>
           <div className={styles.links}>
             <a
+              href={LINKS.googleMaps}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.link}
+            >
+              {RESTAURANT.address}, {RESTAURANT.city}
+            </a>
+            <a
               href={LINKS.instagram}
               target="_blank"
               rel="noopener noreferrer"

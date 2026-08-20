@@ -15,7 +15,7 @@ export const translations: Record<string, Record<string, string>> = {
 
     // Hero
     "hero.tagline": "Fire. Smoke. Soul.",
-    "hero.subtitle": "Premium Korean BBQ · Toronto",
+    "hero.subtitle": "Premium Korean BBQ · Thornhill, Toronto",
     "hero.reserveBtn": "Reserve a Table",
     "hero.scroll": "Scroll",
     "hero.verticalLeft": "Art over charcoal",
@@ -24,7 +24,7 @@ export const translations: Record<string, Record<string, string>> = {
     // About
     "about.label": "Our Philosophy",
     "about.heading": "The Art of Fire",
-    "about.p1": "Kobi is not a Korean BBQ restaurant. It is a study in flame — where prime cuts meet centuries-old grilling tradition, and every dish earns its place on the table.",
+    "about.p1": "KOBI is Korean BBQ as a study in flame — where prime cuts meet centuries-old charcoal grilling tradition, and every dish earns its place on the table.",
     "about.p2": "No shortcuts. No compromises. Just fire, smoke, and soul.",
 
     "about.viewMore": "Our Full Story",
@@ -33,7 +33,7 @@ export const translations: Record<string, Record<string, string>> = {
     // About Detail Page
     "aboutPage.label": "Our Story",
     "aboutPage.heading": "Born from Fire",
-    "aboutPage.intro": "KOBI was born from a simple belief: that the best Korean BBQ should honor its roots while embracing the finest ingredients the world has to offer.",
+    "aboutPage.intro": "KOBI was born from a simple belief: that the best Korean BBQ should honor its roots while embracing the finest ingredients the world has to offer — served over charcoal at Yonge & Steeles, Thornhill.",
     "aboutPage.philosophy.label": "Philosophy",
     "aboutPage.philosophy.heading": "No Shortcuts",
     "aboutPage.philosophy.p1": "We believe that great food cannot be rushed. Every cut of meat is carefully selected, and every ingredient is chosen with intention. Quality is not a checkbox — it is the foundation of everything we do.",
@@ -121,7 +121,7 @@ export const translations: Record<string, Record<string, string>> = {
 
     // Hero
     "hero.tagline": "불. 연기. 한 끼.",
-    "hero.subtitle": "프리미엄 코리안 바베큐 · 토론토",
+    "hero.subtitle": "프리미엄 코리안 바베큐 · 쏜힐 · 토론토",
     "hero.reserveBtn": "예약하기",
     "hero.scroll": "아래로",
     "hero.verticalLeft": "숯불 위의 한 상",

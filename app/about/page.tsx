@@ -5,8 +5,9 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 
 export const metadata: Metadata = {
-  title: "About — KOBI | Premium Korean BBQ Toronto",
-  description: "The story behind KOBI — our philosophy, our craft, and our dedication to fire-forged Korean BBQ.",
+  title: "About — KOBI Korean BBQ Thornhill | Born from Fire",
+  description:
+    "The story behind KOBI — charcoal-fired Korean BBQ in Thornhill. Our philosophy, our craft, and our dedication to fire-forged Korean BBQ.",
 };
 
 export default function AboutPage() {
