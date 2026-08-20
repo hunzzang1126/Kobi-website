@@ -170,7 +170,10 @@
   font-weight: 400;
   color: var(--color-text-primary);
   letter-spacing: 0.02em;
-  flex-shrink: 0;
+  /* Must be allowed to shrink and wrap — flex-shrink: 0 here pushes the
+     price off-screen on narrow viewports (long names + fixed-width price) */
+  flex-shrink: 1;
+  min-width: 0;
   transition: color 0.2s var(--ease-out);
 }
 
@@ -192,6 +195,7 @@
   color: var(--color-blush-muted);
   letter-spacing: 0.02em;
   flex-shrink: 0;
+  text-align: right;
 }
 
 .itemDescription {
