@@ -108,6 +108,7 @@ export default function RootLayout({
         {/* beforeInteractive = injected into <head> of initial HTML, runs before ANY JS */}
         <Script src="/scroll-top.js" strategy="beforeInteractive" />
         <LanguageProvider>{children}</LanguageProvider>
+        <Script src="/sf-track.js" data-client="kobi" strategy="afterInteractive" />
       </body>
     </html>
   );
